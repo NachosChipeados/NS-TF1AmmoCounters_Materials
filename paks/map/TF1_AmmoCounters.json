@@ -1,20 +1,20 @@
 {
-    "name": "TF1_AmmoCounters",
-    "assetsDir": "../assets",
-    "outputDir": "../rpaks",
-    "version": 7,
+	"name": "TF1_AmmoCounters",
+	"assetsDir": "../assets",
+	"outputDir": "../rpaks",
+	"version": 7,
 	"starpakPath": "TF1_AmmoCounters.starpak",
-    "files":[
+	"files":[
 		{
-            "$type":"matl",
+			"$type":"matl",
 			"rasterFlags": 6,
-            "version":12,
-            "path":"models/weapons/attachments/ammo_counter",
-            "type": "skn",
-            "surface": "default",
+			"version":12,
+			"path":"models/weapons/attachments/ammo_counter",
+			"type": "skn",
+			"surface": "default",
 			"shaderset": "shaderset/uberAoCavEmitEntcolmeSamp2222222_skn.rpak",
-            "width": 2048,
-            "height": 2048,
+			"width": 2048,
+			"height": 2048,
 			"albedoTint": [ 1.0, 1.0, 1.0],
 			"emissiveTint": [ 1.0, 1.0, 1.0],
 			"textures":[
@@ -32,12 +32,12 @@
 			"texture/models/weapons/attachments/ammo_counter_ao",
 			"" 
 			]  
-        },
+		},
 		{
-            "$type":"matl",
+			"$type":"matl",
 			"type": "fix",
 			"surface": "default",
-            "path":"models/weapons/attachments/ammo_counter",
+			"path":"models/weapons/attachments/ammo_counter",
 			"shaderset": "shaderset/uberAoCavEmitEntcolmeSamp2222222_fix.rpak",
 			"textures":[
 			"texture/models/weapons/attachments/ammo_counter_col",
@@ -61,18 +61,17 @@
 			"height": 2048,
 			"albedoTint": [ 1.0, 1.0, 1.0],
 			"emissiveTint": [ 1.0, 1.0, 1.0]
-			
         },
 		{
-            "$type":"matl",
+			"$type":"matl",
 			"rasterFlags": 6,
-            "version":12,
-            "path":"models/weapons/attachments/ammo_counter_pistol",
-            "type": "skn",
-            "surface": "default",
+			"version":12,
+			"path":"models/weapons/attachments/ammo_counter_pistol",
+			"type": "skn",
+			"surface": "default",
 			"shaderset": "shaderset/uberAoCavEmitEntcolmeSamp2222222_skn.rpak",
-            "width": 2048,
-            "height": 2048,
+			"width": 2048,
+			"height": 2048,
 			"albedoTint": [ 1.0, 1.0, 1.0],
 			"emissiveTint": [ 1.0, 1.0, 1.0],
 			"textures":[
@@ -90,12 +89,12 @@
 			"texture/models/weapons/attachments/ammo_counter_pistol_ao",
 			"" 
 			]  
-        },
+		},
 		{
-            "$type":"matl",
+			"$type":"matl",
 			"type": "fix",
 			"surface": "default",
-            "path":"models/weapons/attachments/ammo_counter_pistol",
+			"path":"models/weapons/attachments/ammo_counter_pistol",
 			"shaderset": "shaderset/uberAoCavEmitEntcolmeSamp2222222_fix.rpak",
 			"textures":[
 			"texture/models/weapons/attachments/ammo_counter_pistol_col",
@@ -119,7 +118,6 @@
 			"height": 2048,
 			"albedoTint": [ 1.0, 1.0, 1.0],
 			"emissiveTint": [ 1.0, 1.0, 1.0]
-			
         }
     ]
 }

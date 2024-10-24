@@ -1,5 +1,5 @@
 {
-    "Name": "Nachos.TF1_Materials",
+	"Name": "Nachos.TF1_Materials",
 	"Description": "Collection of materials used to create Titanfall 1 styled ammo counters.",
 	"Version": "1.2.0",
 	"LoadPriority": 5,
