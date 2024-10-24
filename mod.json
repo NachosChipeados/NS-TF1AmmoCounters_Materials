@@ -1,9 +1,9 @@
 {
     "Name": "Nachos.TF1_Materials",
 	"Description": "Collection of materials used to create Titanfall 1 styled ammo counters.",
-	"Version": "1.2.1",
+	"Version": "1.2.0",
 	"LoadPriority": 5,
-	"DownloadLink": "https://thunderstore.io/package/download/NachosChipeados/Titanfall_1_Ammo_Counters_MATERIALS/1.2.1",
+	"DownloadLink": "https://thunderstore.io/package/download/NachosChipeados/Titanfall_1_Ammo_Counters_MATERIALS/1.2.0",
 	"Scripts": 
 	[
 		{
