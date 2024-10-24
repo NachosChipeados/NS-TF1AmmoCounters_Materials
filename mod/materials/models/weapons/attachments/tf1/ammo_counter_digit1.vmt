@@ -1,0 +1,13 @@
+"Patch"
+{
+    // -Ported from TF1
+
+	"Include" 				"materials/models/weapons/attachments/ammo_counter_clip_digit0.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 		"models/weapons/attachments/tf1_ammo/ammo_counter_numbers_col"
+		
+		"$digit_index"		"1"
+	}
+}

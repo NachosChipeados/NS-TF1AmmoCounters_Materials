@@ -1,0 +1,11 @@
+"Patch"
+{
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_rounds.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/ammo_counter_mags_col"
+	
+		"$atlasFrames" 	"[10 1]"
+	}
+}

@@ -1,0 +1,9 @@
+"Patch"
+{
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_rounds_2rows_blank.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/tf1_mod/ammo_rounds_blank_col"
+	}
+}

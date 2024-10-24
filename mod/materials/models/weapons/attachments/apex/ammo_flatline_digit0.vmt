@@ -1,0 +1,11 @@
+"Patch"
+{
+    // -Ported from Apex
+
+	"Include" 				"materials/models/weapons/attachments/ammo_counter_clip_digit0.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 		"models/weapons/attachments/apex/ammo_numbers_flatline"
+	}
+}

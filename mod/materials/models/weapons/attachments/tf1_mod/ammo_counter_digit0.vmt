@@ -1,0 +1,9 @@
+"Patch"
+{
+	"Include" 				"materials/models/weapons/attachments/base/ammo_counter_digit_atlas.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 		"models/weapons/attachments/tf1_mod/ammo_numbers_atlas"
+	}
+}

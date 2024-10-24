@@ -1,0 +1,12 @@
+"Patch"
+{
+	// -Ported from TF1
+	// -Added "no level of detail" to vtf
+
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_rounds_2rows.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/tf1/ammo_counter_rounds_col"
+	}
+}

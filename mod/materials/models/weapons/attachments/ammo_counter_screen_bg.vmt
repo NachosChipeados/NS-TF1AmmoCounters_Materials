@@ -1,0 +1,63 @@
+// v1.01
+//This file is auto-generated from reVaMpT. Edit at your own risk.
+"Basic"
+{
+	// -No longer visible while cloaked
+
+	"$surfaceprop" 		"plastic"
+
+	"$basetexture" 		"models/weapons/attachments/ammo_counter_screen_bg_col"
+
+	//Start of freehand input from reVaMpT//
+	//"$selfillum" 		"1"
+
+//--------------------------------
+// CUSTOM STUFF STARTS HERE
+//--------------------------------
+
+// Glowey stuff
+
+	"$allowoverbright"	"1"
+	
+	"$color"			"[.0 .0 .0]"
+	"$valuezero" 		"0"
+	"$color_temp_0"		".0"
+	"$color_temp_1"		".0"
+	"$color_temp_2"		".0"
+	"$colorscale"		"1.5"
+
+// Cloak
+
+	"$alpha_multiply"	"0.0"
+	"$alpha"			"1.0"
+	"$alpha_temp"		"1.0"
+
+// Misc
+
+	"$ammofrac"			"0.0"
+
+	"Proxies"
+	{
+		"ClipAmmoFraction"
+		{
+			"resultVar" "$ammofrac"
+		}
+
+		"ClipAmmoColor" //BackgroundAmmoColor
+		{
+			"resultVar"			"$color"
+		}
+
+        "EntityScript"
+        {
+            "scriptFuncName" "VMTCallback_CloakToAlpha_TF1"
+            "resultVar"    "$alpha_multiply"
+        }
+        multiply    //1
+        {
+            srcVar1        $alpha_temp
+            srcVar2        $alpha_multiply
+            resultVar    $alpha
+        }
+	}
+}

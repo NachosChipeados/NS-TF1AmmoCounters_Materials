@@ -1,0 +1,13 @@
+"Patch"
+{
+    // -Created to fix a bug with most weapons when using extended mags
+
+	"Include" 			"materials/models/weapons/attachments/ammo_counter_mags.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/tf1_mod/ammo_mags_extended_col"
+	
+		"$atlasFrames" 	"[20 1]"
+	}
+}

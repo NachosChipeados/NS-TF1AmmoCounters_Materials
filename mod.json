@@ -1,17 +1,34 @@
 {
-   "Name": "Example.Mod",
-   "Description": "A cool mod that does cool stuff",
-   "Version": "1.0.0",
-   "DownloadLink": "https://northstar.thunderstore.io/package/download/Example/Mod/",
-
-   "LoadPriority": 0,
-   "ConVars": [],
-   "Scripts": [{
-      "Path": "example.nut",
-      "RunOn": "(CLIENT || SERVER) && MP",
-      "ClientCallback": {
-         "Before":"example_callback"
-      }
-   }],
-   "Localisation": []
+    "Name": "Nachos.TF1_Materials",
+	"Description": "Collection of materials used to create Titanfall 1 styled ammo counters.",
+	"Version": "1.2.0",
+	"LoadPriority": 5,
+	"DownloadLink": "https://thunderstore.io/package/download/NachosChipeados/Titanfall_1_Ammo_Counters_MATERIALS/1.2.0",
+	"Scripts": 
+	[
+		{
+			"Path": "tf1MaterialProxies.nut",
+			"RunOn": "CLIENT",
+		},
+		{
+			"Path": "ui/tf1_ammo_settings.nut",
+			"RunOn": "UI",
+			"UICallback": {
+				"Before": "TF1AmmoSettings_Init"
+			}
+		}
+	],
+	"ConVars":
+	[
+		{
+			"Name": "TF1AMMO.digit_style",
+			"DefaultValue": "0",
+			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.blank_rounds",
+			"DefaultValue": "1",
+			"Flags": 16777216
+		}
+    ]
 }

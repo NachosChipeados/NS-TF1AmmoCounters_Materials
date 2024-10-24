@@ -1,0 +1,9 @@
+"Patch"
+{
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_rounds_doubletake.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/tf1/ammo_counter_rounds_col"
+	}
+}

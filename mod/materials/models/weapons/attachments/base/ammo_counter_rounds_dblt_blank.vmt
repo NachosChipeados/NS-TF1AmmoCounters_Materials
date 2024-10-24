@@ -1,0 +1,89 @@
+"Basic"
+{
+	// Base ammocounter rounds material
+
+	"$surfaceprop" 		"default"
+
+	"$basetexture" 		"your/material/here"
+	"$translucent" 		"1"
+
+	"$ammo" 			"0"
+	"$maxClipAmmo" 		"0"
+	"$atlasFrames" 		"[64 1]"
+	"$atlasFrameStart" 	"[0 0]"
+	"$atlasFrameCount" 	"[1 1]"
+
+//--------------------------------
+// CUSTOM STUFF STARTS HERE
+//--------------------------------
+
+// Cloak
+
+	"$alpha_multiply"	"0.0"
+	"$alpha"			"1.0"
+	"$alpha_temp"		"1.0"
+
+// Ads jitter fix (taken from CRF, again. Might as well just name this mod CRF 2 with how much shit i take from it lol)
+
+	"$additive"			"1"	//this helps a bit with tsaa
+
+	"$tsaaResponsive" 	"1"
+    "$tsaaMotionAlphaThreshold" "0.01"
+    "$tsaaMotionAlphaRamp" "10"
+
+// Misc
+
+	"$ammo_equal" 		"0"
+	"$ammo_div"   		"2"
+
+	"Proxies"
+	{
+		"MaxClipAmmo"
+		{
+			"resultVar" 	"$maxClipAmmo"
+		}
+	
+		Equals
+		{
+			"srcVar1"     	"$maxClipAmmo"
+			"resultVar"   	"$ammo_equal"
+		}
+		Divide
+		{
+			"srcVar1"	  	"$ammo_equal"
+			"srcVar2"	  	"$ammo_div"
+			"resultVar"	  	"$maxClipAmmo"
+		
+		}
+
+		"TickCounterAtlasFrames"
+		{
+			"tickCount"					"$maxClipAmmo"
+			"rowLength"					"$maxClipAmmo"
+			"atlasFrameSize"			"$atlasFrames[0]"
+			
+			"resultAtlasFrameStartVar"	"$atlasFrameStart[0]"
+			"resultAtlasFrameCountVar"	"$atlasFrameCount[0]"
+		}
+	
+		"TextureAtlas"
+		{
+			"frameSize"		"$atlasFrames"
+			"frameStart"	"$atlasFrameStart"
+			"frameCount"	"$atlasFrameCount"
+			"resultVar"		"$basetexturetransform"
+		}
+
+        "EntityScript"
+        {
+            "scriptFuncName" "VMTCallback_CloakToAlpha_Blank"
+            "resultVar"    "$alpha_multiply"
+        }
+        multiply    //1
+        {
+            srcVar1        $alpha_temp
+            srcVar2        $alpha_multiply
+            resultVar    $alpha
+        }
+	}
+}
