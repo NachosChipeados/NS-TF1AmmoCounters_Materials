@@ -42,7 +42,7 @@ jobs:
           # Name of the package
           name: ${{ env.name }} # This can be modified if the package name differs from the repo name
           # Package version to publish
-          version: ${{ github.ref_name }} # This is the tag that was created in the release
+          version: 1.3.0 # This is the tag that was created in the release
           # Description of the mod
           description: "Collection of materials used to create Titanfall 1 styled ammo counters."
           # Thunderstore API token
