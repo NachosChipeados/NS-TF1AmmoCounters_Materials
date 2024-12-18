@@ -1,0 +1,140 @@
+"UnlitTwoTexture"
+{
+	// Base ammocounter shells material
+
+	"$surfaceprop" 		"default"
+
+	"$basetexture" 		"your/material/here"
+	"$Texture2" 		"your/material/here"
+	"$translucent" 		"1"
+
+	"$ammofrac" 		"0.0"
+	"$maxClipAmmo"		"1.0"
+	"$maxClipAmmoTemp"	".0"	//dummy value
+
+//--------------------------------
+// CUSTOM STUFF STARTS HERE
+//--------------------------------
+
+// Glowey stuff
+
+	"$allowoverbright"	"1"
+
+	"$color"			"[1.0 1.0 1.0]"
+	"$color2"			"[.0 .0 .0]"
+	"$valuezero" 		"0"
+	"$valuetwo" 		"2"
+	"$color_temp_0"		".0"
+	"$color_temp_1"		".0"
+	"$color_temp_2"		".0"
+	"$colorscale"		"2" //10
+
+// Cloak
+
+	"$alpha_multiply"	"0.0"
+	"$alpha"			"1.0" //0.1
+	"$alpha_temp"		"1.0"
+
+// Misc
+
+	"$holoScale" 		"[0.0 1]"		// Base scaling var [inverted!]
+	"$holoOffset" 		"[.5 0.125]"		// Base Offset var
+	"$offsetVal"		".0"
+
+	"Proxies"
+	{
+		"MaxClipAmmo"
+		{
+			"resultVar" "$maxClipAmmo"
+		}
+		"ClipAmmoFraction"
+		{
+			"resultVar" "$ammofrac"
+		}
+
+		"ProgressBarWithFrac"
+		{
+			"fraction"		"$ammofrac"
+			"resultvar" "$texture2transform"
+			//"resultVar"		"$basetexturetransform"
+		}
+
+		"ClipAmmoColor"
+		{
+			"resultVar"			"$color2"
+		}
+		
+		Clamp	//0
+		{
+			srcVar1		$valuezero
+			min		"$color2[0]"
+			max		"$color2[0]"
+			resultVar		$color_temp_0	
+		}
+		
+		Clamp	//1
+		{
+			srcVar1		$valuezero
+			min		"$color2[1]"
+			max		"$color2[1]"
+			resultVar		$color_temp_1	
+		}
+		Clamp	//2
+		{
+			srcVar1		$valuezero
+			min			"$color2[2]"
+			max			"$color2[2]"
+			resultVar	$color_temp_2
+		}
+		multiply	//0
+		{
+			srcVar1		$color_temp_0
+			srcVar2		"$colorscale"
+			resultVar	"$color2[0]"
+		}
+		multiply	//1
+		{
+			srcVar1		$color_temp_1
+			srcVar2		"$colorscale"
+			resultVar	"$color2[1]"
+		}
+		multiply	//2
+		{
+			srcVar1		$color_temp_2
+			srcVar2		"$colorscale"
+			resultVar	"$color2[2]"
+		}
+		
+//		Equals 
+//		{
+//			srcVar1			$maxClipAmmo
+//			resultVar		$maxClipAmmoTemp
+//		}
+		
+		Equals 
+		{
+			srcVar1			$maxClipAmmo
+			resultVar		"$holoScale[0]"
+		}
+		
+		// Final transform
+		"TextureTransform"
+		{
+			"scaleVar"		"$holoScale"
+			"translateVar"	"$holoOffset"
+			"resultvar"		"$basetexturetransform"
+		}
+
+        "EntityScript"
+        {
+            "scriptFuncName" "VMTCallback_CloakToAlpha_TF1"
+            "resultVar"    "$alpha_multiply"
+        }
+        multiply    //1
+        {
+            srcVar1        $alpha_temp
+            srcVar2        $alpha_multiply
+            resultVar    $alpha
+        }
+	}
+}

@@ -61,7 +61,7 @@
 			"height": 2048,
 			"albedoTint": [ 1.0, 1.0, 1.0],
 			"emissiveTint": [ 1.0, 1.0, 1.0]
-        },
+		},
 		{
 			"$type":"matl",
 			"rasterFlags": 6,
@@ -118,6 +118,6 @@
 			"height": 2048,
 			"albedoTint": [ 1.0, 1.0, 1.0],
 			"emissiveTint": [ 1.0, 1.0, 1.0]
-        }
-    ]
+		}
+	]
 }

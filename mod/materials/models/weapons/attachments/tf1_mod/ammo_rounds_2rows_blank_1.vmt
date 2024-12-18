@@ -4,7 +4,7 @@
 	
 	"Insert"
 	{
-		"$basetexture" 	"models/weapons/attachments/tf1_mod/ammo_rounds_blank_col"
+		"$basetexture" 	"models/weapons/attachments/tf1/ammo_counter_rounds_col"
 		
 		"$row_index"	"1"
 	}

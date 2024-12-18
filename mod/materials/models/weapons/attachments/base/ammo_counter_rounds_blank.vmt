@@ -33,6 +33,8 @@
 
 // Misc
 
+	"$color"			"{128 128 128}"
+
 	"Proxies"
 	{
 		"MaxClipAmmo"

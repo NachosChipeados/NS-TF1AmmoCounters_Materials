@@ -33,6 +33,8 @@
 
 // Misc
 
+	"$color"			"{128 128 128}"
+
 	"$ammo_equal" 		"0"
 	"$ammo_div"   		"2"
 

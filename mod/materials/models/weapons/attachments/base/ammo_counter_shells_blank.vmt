@@ -1,0 +1,76 @@
+"UnlitTwoTexture"
+{
+	// Base ammocounter shells material
+
+	"$surfaceprop" 		"default"
+
+	"$basetexture" 		"your/material/here"
+	"$Texture2" 		"your/material/here"
+	"$translucent" 		"1"
+
+	"$ammofrac" 		"0.0"
+	"$maxClipAmmo"		"1.0"
+	"$maxClipAmmoTemp"	".0"	//dummy value
+
+//--------------------------------
+// CUSTOM STUFF STARTS HERE
+//--------------------------------
+
+// Cloak
+
+	"$alpha_multiply"	"0.0"
+	"$alpha"			"1.0" //0.1
+	"$alpha_temp"		"1.0"
+
+// Misc
+
+	"$color"			"{128 128 128}"
+
+	"$holoScale" 		"[0.0 1]"		// Base scaling var [inverted!]
+	"$holoOffset" 		"[.5 0.125]"		// Base Offset var
+	"$offsetVal"		".0"
+
+	"Proxies"
+	{
+		"MaxClipAmmo"
+		{
+			"resultVar" "$maxClipAmmo"
+		}
+		"ClipAmmoFraction"
+		{
+			"resultVar" "$ammofrac"
+		}
+
+//		Equals 
+//		{
+//			srcVar1			$maxClipAmmo
+//			resultVar		$maxClipAmmoTemp
+//		}
+		
+		Equals 
+		{
+			srcVar1			$maxClipAmmo
+			resultVar		"$holoScale[0]"
+		}
+		
+		// Final transform
+		"TextureTransform"
+		{
+			"scaleVar"		"$holoScale"
+			"translateVar"	"$holoOffset"
+			"resultvar"		"$basetexturetransform"
+		}
+
+        "EntityScript"
+        {
+            "scriptFuncName" "VMTCallback_CloakToAlpha_TF1"
+            "resultVar"    "$alpha_multiply"
+        }
+        multiply    //1
+        {
+            srcVar1        $alpha_temp
+            srcVar2        $alpha_multiply
+            resultVar    $alpha
+        }
+	}
+}
