@@ -1,0 +1,10 @@
+"Patch"
+{
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_shells.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/tf2/ammo_rounds_sniper_col"
+		"$Texture2" 	"models/weapons/attachments/ammo_counter_meter_col"
+	}
+}

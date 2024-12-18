@@ -1,6 +1,6 @@
 why/
-tf2/
 
 **/*.png
 *.tga
+*.pdn
 *.ini
