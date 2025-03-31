@@ -1,16 +1,11 @@
-// v1.01
-//This file is auto-generated from reVaMpT. Edit at your own risk.
 "Basic"
 {
-	// -No longer visible while cloaked
+	// flashing warning
 
 	"$surfaceprop" 		"plastic"
 
-	"$basetexture" 		"models/weapons/attachments/ammo_counter_screen_bg_col"
+	"$basetexture" 		"your/material/here"
 	"$translucent" 		"1"
-
-	//Start of freehand input from reVaMpT//
-	//"$selfillum" 		"1"
 
 //--------------------------------
 // CUSTOM STUFF STARTS HERE
@@ -25,7 +20,7 @@
 	"$color_temp_0"		".0"
 	"$color_temp_1"		".0"
 	"$color_temp_2"		".0"
-	"$colorscale"		"1.5"
+	"$colorscale"		"2"
 
 // Cloak
 
@@ -33,14 +28,30 @@
 	"$alpha"			"1.0"
 	"$alpha_temp"		"1.0"
 
+// Ads jitter fix (taken from CRF, again. Might as well just name this mod CRF 2 with how much shit i take from it lol)
+
+	"$additive"			"1"	//this helps a bit with tsaa
+
+	"$tsaaResponsive" 	"1"
+    "$tsaaMotionAlphaThreshold" "0.01"
+    "$tsaaMotionAlphaRamp" "10"
+
 // Misc
+
+	"$spin_rate" "100"
+	"$spin_multiplier" "0"
+	"$angle" 0.0
+	"$scale" 1
+    "$translate" "[0.0 0.0]"
+    "$center" "[0.5 0.5]"
 
 	"Proxies"
 	{
-		"ClipAmmoColor" //BackgroundAmmoColor
+		"ClipAmmoColor"
 		{
 			"resultVar"			"$color"
 		}
+
 		Clamp	//0
         {
             srcVar1		$valuezero
@@ -81,7 +92,6 @@
 			srcVar2		"$colorscale"
 			resultVar	"$color[2]"
 		}
-
         "EntityScript"
         {
             "scriptFuncName" "VMTCallback_CloakToAlpha_TF1"
@@ -93,5 +103,31 @@
             srcVar2        $alpha_multiply
             resultVar    $alpha
         }
+
+        "EntityScript"
+        {
+            "scriptFuncName" "VMTCallback_AmmoFracSpinRate"
+            "resultVar"    "$spin_multiplier"
+        }
+        add    //1
+        {
+            srcVar1        $spin_rate
+            srcVar2        $spin_multiplier
+            resultVar    $alpha //lol
+        }
+		"LinearRamp"
+		{
+			"rate" $spin_multiplier
+			"initialValue" 0.0
+			"resultVar" "$angle"
+		}
+		"TextureTransform"
+		{
+			"translateVar" "$translate"
+			"rotateVar" "$angle"
+			"scaleVar" "$scale"
+			"centerVar" "$center"
+			"resultVar" "$basetexturetransform"
+		}
 	}
 }

@@ -1,0 +1,11 @@
+"Patch"
+{
+	//"Include" 			"materials/models/weapons/attachments/base/ammo_counter_shells.vmt"
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_rounds.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/apex/ammo_rounds_volt_col"
+		//"$Texture2" 	"models/weapons/attachments/ammo_counter_meter_col"
+	}
+}

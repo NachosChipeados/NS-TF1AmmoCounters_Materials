@@ -1,0 +1,9 @@
+"Patch"
+{
+	"Include" 			"materials/models/weapons/attachments/ammo_counter_screen_bg.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/apex/ammo_volt_circle_col"
+	}
+}

@@ -1,9 +1,11 @@
 "Patch"
 {
-	"Include" 				"materials/models/weapons/attachments/base/ammo_counter_doubletake_atlas.vmt"
+	"Include" 				"materials/models/weapons/attachments/base/ammo_counter_digit_atlas.vmt"
 	
 	"Insert"
 	{
 		"$basetexture" 		"models/weapons/attachments/tf1_mod/ammo_numbers_atlas_alt"
+
+		"$ammo_div"   		"2"
 	}
 }

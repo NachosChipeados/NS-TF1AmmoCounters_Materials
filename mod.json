@@ -29,6 +29,35 @@
 			"Name": "TF1AMMO.blank_rounds",
 			"DefaultValue": "1",
 			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.col_fracHigh",
+			"DefaultValue": "133 231 255", // Taken from tf1 _cl_material_proxies.nut
+			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.col_fracMid",
+			"DefaultValue": "255 128 64",
+			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.col_fracLow",
+			"DefaultValue": "255 75 66",
+			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.col_proScreen",
+			"DefaultValue": "255 128 64",
+			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.col_proScreenDisabled",
+			"DefaultValue": "255 75 66",
+			"Flags": 16777216
+		},
+		{
+			"Name": "TF1AMMO.debug_hide",
+			"DefaultValue": "0"
 		}
     ]
 }

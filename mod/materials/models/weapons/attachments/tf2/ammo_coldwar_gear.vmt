@@ -1,0 +1,9 @@
+"Patch"
+{
+	"Include" 			"materials/models/weapons/attachments/base/ammo_counter_rotating.vmt"
+	
+	"Insert"
+	{
+		"$basetexture" 	"models/weapons/attachments/tf2/ammo_coldwar_gear_col"
+	}
+}

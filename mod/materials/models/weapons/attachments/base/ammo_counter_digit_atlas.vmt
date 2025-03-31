@@ -33,8 +33,6 @@
 	
 // Digit atlas settings
 
-	"$valuezero"		"0"
-
 	"$frame"			"0"			//base atlas var
 	"$frame_temp"		"0"			//temp var
 	"$frame_temp_alt"	"0"			//temp var
@@ -56,6 +54,10 @@
     "$tsaaMotionAlphaRamp" "10"
 
 // Misc
+	"$valueone" 		"1"
+
+	"$ammo_equal" 		"0"
+	"$ammo_div"   		"0"
 
 	"$digit_index"		"0"
 
@@ -65,7 +67,34 @@
 		{
 			"resultVar" "$ammo"
 		}
-	
+		Equals
+		{
+			"srcVar1"     "$ammo"
+			"resultVar"   "$ammo_equal"
+		}
+
+		//if (srcVar1 > srcVar2)
+		//{ resultVar = greaterVar }
+		//
+		//else
+		//{ resultVar = LessEqualVar }
+
+		LessOrEqual
+		{
+			lessEqualVar	$valueone
+			greaterVar		$ammo_div
+			srcVar1			$ammo_div
+			srcVar2			$valuezero
+			resultVar		$ammo_div
+		}
+		Divide
+		{
+			"srcVar1"	  "$ammo_equal"
+			"srcVar2"	  "$ammo_div"
+			"resultVar"	  "$ammo"
+		
+		}
+
 		"NumericCounterAtlasFrame"
 		{
 			"value"						"$ammo"
@@ -80,10 +109,15 @@
 			"resultVar"		"$basetexturetransform"
 		}
 
-		"ClipAmmoColor"
-		{
-			"resultVar"			"$color"
-		}
+//		"ClipAmmoColor"
+//		{
+//			"resultVar"			"$color"
+//		}
+        "EntityScript"
+        {
+            "scriptFuncName" "VMTCallback_ClipAmmoColor"
+            "resultVar"    "$color"
+        }
 
 		Clamp	//0
         {
