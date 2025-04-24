@@ -1,5 +1,6 @@
 {
 	"Postload": {
-		"TF1_AmmoCounters.rpak": "common.rpak"
+		"TF1_AmmoCounters.rpak": "common.rpak",
+		"TF1_Misc_Attachments.rpak": "common.rpak"
 	}
 }
