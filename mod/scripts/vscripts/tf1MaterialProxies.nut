@@ -58,7 +58,7 @@ var function VMTCallback_AmmoToSpinRate( entity ent )
 	if ( IsLobby() )
 		return 0.0
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return 0.0
 
@@ -79,7 +79,7 @@ var function VMTCallback_AmmoToSpinRate_Reserve( entity ent )
 	if ( IsLobby() )
 		return 0.0
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return 0.0
 
@@ -100,7 +100,7 @@ var function VMTCallback_ClipAmmoColor( entity ent )
 	if ( IsLobby() )
 		return Vector( 1, 1, 1 )
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return Vector( 1, 1, 1 )
 
@@ -121,7 +121,7 @@ var function VMTCallback_RemainingAmmo( entity ent )
 	if ( IsLobby() )
 		return 0.0
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return 0.0
 
@@ -139,7 +139,7 @@ var function VMTCallback_RemainingAmmoColor( entity ent )
 	if ( IsLobby() )
 		return Vector( 1, 1, 1 )
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return Vector( 1, 1, 1 )
 
@@ -158,7 +158,7 @@ var function VMTCallback_MaxCarryAmmo( entity ent )
 	if ( IsLobby() )
 		return 0.0
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return 0.0
 
@@ -177,7 +177,7 @@ var function VMTCallback_ProScreen( entity ent )
 	if ( IsLobby() )
 		return 0.0
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return 0.0
 
@@ -209,7 +209,7 @@ var function VMTCallback_ProScreenColor( entity ent )
 	if ( IsLobby() )
 		return Vector( 1, 1, 1 )
 
-	entity player = GetLocalClientPlayer()
+	entity player = GetLocalViewPlayer()
 	if ( !IsValid( player ) )
 		return Vector( 1, 1, 1 )
 
@@ -251,9 +251,9 @@ vector function TF1_AmmoCol( entity player, entity weapon, int currentAmmo, int 
 
 //Stolen from 4V (thanks nerd)
 //Stolen again from Khalmee loll
-vector function GetConVarFloat3(string convar)
+vector function GetConVarFloat3( string convar )
 {
-    array<string> value = split(GetConVarString(convar), " ")
+    array<string> value = split( GetConVarString( convar ), " " )
     try{
         return Vector(value[0].tofloat(), value[1].tofloat(), value[2].tofloat()) 
     }
