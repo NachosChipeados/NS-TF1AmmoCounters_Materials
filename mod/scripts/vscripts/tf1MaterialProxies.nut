@@ -111,7 +111,7 @@ var function VMTCallback_ClipAmmoColor( entity ent )
 	int currentAmmo = weapon.GetWeaponPrimaryClipCount()
 	int maxAmmo = weapon.GetWeaponPrimaryClipCountMax()
 
-	return TF1_AmmoCol( player, weapon, currentAmmo, maxAmmo )
+	return TF1_AmmoCol( currentAmmo, maxAmmo )
 }
 
 // The regular VMT proxies for these dont work if the weapon doesnt use clips
@@ -150,7 +150,7 @@ var function VMTCallback_RemainingAmmoColor( entity ent )
 	int currentAmmo = player.GetWeaponAmmoStockpile( weapon )
 	int maxAmmo = weapon.GetWeaponSettingInt( eWeaponVar.ammo_stockpile_max )
 
-	return TF1_AmmoCol( player, weapon, currentAmmo, maxAmmo )
+	return TF1_AmmoCol( currentAmmo, maxAmmo )
 }
 
 var function VMTCallback_MaxCarryAmmo( entity ent )
@@ -185,17 +185,12 @@ var function VMTCallback_ProScreen( entity ent )
 	if ( !IsValid( weapon ) )
 		return 0.0
 
-	string test = weapon.GetClassName()
+	string weaponName = weapon.GetWeaponClassName()
 
-//	if ( !ItemDefined( test ) )
-//		return 0.0
-
-//	if ( !IsPersistenceBitSet( weapon, ".proScreenKills", 5 ) )
-//		return 0.0
-	if ( !weapon.HasMod( "pro_screen" ) )
+	if ( !ItemDefined( weaponName ) )
 		return 0.0
 
-	int proScreenKills = WeaponGetProScreenKills( player, weapon.GetWeaponClassName() )
+	int proScreenKills = WeaponGetProScreenKills( player, weaponName )
 
 	return proScreenKills
 #else
@@ -227,7 +222,7 @@ var function VMTCallback_ProScreenColor( entity ent )
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-vector function TF1_AmmoCol( entity player, entity weapon, int currentAmmo, int maxAmmo )
+vector function TF1_AmmoCol( int currentAmmo, int maxAmmo )
 {
 	vector fracHigh = GetConVarFloat3( "TF1AMMO.col_fracHigh" )
 	vector fracMid = GetConVarFloat3( "TF1AMMO.col_fracMid" )
